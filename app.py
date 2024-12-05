@@ -72,7 +72,7 @@ def main():
     )
     
     # Player Name Input (moved to the main page)
-    user_name = st.text_input("Enter your name:", placeholder="e.g., John Doe", label_visibility="collapsed")
+    user_name = st.text_input("Enter your name:", placeholder="e.g., John Doe")
 
     # Horizontal rule to separate sections
     st.markdown("<hr>", unsafe_allow_html=True)
