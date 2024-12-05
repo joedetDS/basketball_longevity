@@ -124,9 +124,9 @@ def main():
         st.markdown("<hr>", unsafe_allow_html=True)
         st.subheader("Prediction Results 🏆")
         if prediction == 1:
-            st.success(f"Hello **{user_name}**, the player is likely to have a **long career**. 🏀🎉")
+            st.success(f"Hello {user_name}, the player is likely to have a **long career**. 🏀🎉")
         else:
-            st.warning(f"Hello **{user_name}**, the player may have a **short career**. ⚠️")
+            st.warning(f"Hello {user_name}, the player may have a **short career**. ⚠️")
 
 # Run the app
 if __name__ == "__main__":
