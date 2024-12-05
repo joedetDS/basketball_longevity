@@ -112,21 +112,25 @@ def main():
         'field_goals_made': [field_goals_made],
     })
 
-    # Prediction button
-    if st.button("Predict Longevity", use_container_width=True):
-        # Scale the input data using the loaded scaler
-        scaled_data = scaler.transform(player_data)
+    # Check if all inputs except the injury column are zero
+    if all(value == 0 for value in player_data.drop(columns=['injury']).values[0]):
+        st.error("Error: All input values are zero. Please enter valid values for at least one player statistic.")
+    else:
+        # Prediction button
+        if st.button("Predict Longevity", use_container_width=True):
+            # Scale the input data using the loaded scaler
+            scaled_data = scaler.transform(player_data)
 
-        # Make prediction
-        prediction = stack_model.predict(scaled_data)[0]
+            # Make prediction
+            prediction = stack_model.predict(scaled_data)[0]
 
-        # Display results with styled output
-        st.markdown("<hr>", unsafe_allow_html=True)
-        st.subheader("Prediction Results 🏆")
-        if prediction == 1:
-            st.success(f"Hello {user_name}, the player is likely to have a **long career**. 🏀🎉")
-        else:
-            st.warning(f"Hello {user_name}, the player may have a **short career**. ⚠️")
+            # Display results with styled output
+            st.markdown("<hr>", unsafe_allow_html=True)
+            st.subheader("Prediction Results 🏆")
+            if prediction == 1:
+                st.success(f"Hello **{user_name}**, the player is likely to have a **long career**. 🏀🎉")
+            else:
+                st.warning(f"Hello **{user_name}**, the player may have a **short career**. ⚠️")
 
 # Run the app
 if __name__ == "__main__":
