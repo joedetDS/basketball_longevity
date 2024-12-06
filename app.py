@@ -27,7 +27,7 @@ def set_background_image(image_path):
         .moving-text {{
             font-size: 20px;
             font-weight: bold;
-            color: #ff6600;
+            color: #ffff;
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
@@ -63,7 +63,7 @@ def main():
     # App Title and Description with enhanced markdown
     st.markdown(
         """
-        <h1 style='text-align: center; color: #ff6600;'>Basketball Player Longevity Prediction 🏀</h1>
+        <h1 style='text-align: center; color: #ffff;'>Basketball Player Longevity Prediction 🏀</h1>
         <div class="moving-text" style="text-align: center;">
             Welcome to the **Basketball Player Longevity Prediction** app! This tool uses player game statistics to predict whether a player will have a **long** or **short** career. Please enter the required information below and click "Predict Longevity" to see the results.
         </div>
